@@ -131,7 +131,7 @@
 
 ![](images/classeConcretaCertificadosAbstractFactory.png)
 
-> Utilizaremos ainda um pouco do que foi aprendido anteriormente introduzindo as Factorys por iphone no modelo Simple Factory.
+> Utilizaremos ainda um pouco do que foi aprendido anteriormente introduzindo as Factorys por iphone no modelo HalfSimple.
 > Teremos as factorys de iphone 11, iphoneX e a classe abstrata IphoneFactory que receberão por parâmetro a regra utilizada pelo país
 
 * Iphone factory
@@ -159,6 +159,70 @@
 * Cliente
 
 ![](images/clienteAbstractFactory.png)
+
+# Singleton
+
+> Garantir que uma classe só tenha uma única instância, e prover um ponto global de acesso a ele.
+
+### Exemplo
+
+> O exemplo utilizado será de ConnectionPool onde para cada instância uma conexão com o banco é criada,
+> porém mesmo colocando um limite de conexões, para cada novo objeto de conexão criada será gerado um novo objeto
+> com a mesma quantidade de limite do anterior, dessa forma o limite acaba sendo por instância e não geral do objeto.
+
+* ConnectionPool
+
+![](images/connectionPoolSingletonBefore.png)
+
+* Connection
+
+![](images/connectionSingletonBefore.png)
+
+> Dessa forma, mesmo colocando o limite de conexões de POOL_SIZE = 2 será possível
+> fazer quantas conexões o cliente quiser.
+
+* Cliente
+
+![](images/clienteSingletonBefore.png)
+
+## Aplicação do Singleton
+
+> Para ter um limite de conexões.
+> A classe terá um atributo privado e estático para criar o Objeto da classe
+> e um método getInstance() para devolver essa instância criada
+
+* ConnectionPool
+
+![](images/connectionPoolSingletonAfter.png)
+
+* Connection
+
+![](images/connectionSingletonAfter.png)
+
+> Para criar o objeto será necessário utilizar o getInstance() fazendo com que todas
+> conexões possam ser gerenciadas por uma unica instanciação. A 3* conexão só será criada
+> à partir do momento que uma das duas primeiras seja encerrada utilizando o método leaveConnection()
+
+* Cliente
+
+![](images/clienteSingletonAfter.png)
+
+## Monostate
+
+> O monostate possui a mesma função do singleton porém com ele é possível usar interfaces.
+> O Construtor do connectionPool passa a ser público e o atributo de connections passa a ser estático
+> fazendo com que o atributo seja um valor padrão e compartilhado em todas instâncias.
+
+* ConnectionPool
+
+![](images/connectionPoolMonostate.png)
+
+> O maior problema do monostate é que caso você não seja a pessoa que criou classe,
+> talvez não fique tão claro que o atributo é global para as instâncias.
+
+* Cliente
+
+![](images/clienteMonostate.png)
 
 -----
 # Padrões de Projetos Estruturais
