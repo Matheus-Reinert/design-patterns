@@ -16,7 +16,7 @@
 
 * Classes
 
-![](Images/classesIphones.png)
+![](Images/classes.png)
 
 * Classe abstrata: Iphone
 
@@ -37,8 +37,6 @@
 > No cliente será necessário importar todas as classes e instância-la de acordo com o iphone que deverá ser criado.
 
 ![](images/cliente.png)
-
-> ----
 
 ### Factory
 
@@ -93,6 +91,74 @@
 * Cliente
 
 ![](images/clienteSimpleFactory.png)
+
+
+## Abstract Factory
+
+> É utilizada em uma família de objetos, onde existem interfaces diferentes mas que estão relacionadas dentro de uma 
+> funcionalidade do sistema.
+>
+> No exemplo utilizado teremos a criação de um iphone, seus certificados e empacotamento por país.
+> Dessa forma, levamos em consideração que certificados e empacotamento são uma família que estarão relacionados.
+>
+
+
+* Estrutura da Abstract Factory
+
+![](images/estruturaDaAbstractFactory.png)
+
+* Exemplo de classe abstrata Iphone 
+
+![](images/classeAbstrataIphoneAbstractFactory.png)
+
+* Exemplo de classe concreta Iphone
+
+![](images/classeConcretaIphoneAbstractFactory.png)
+
+* Exemplo de interface Empacotamento 
+
+![](images/interfaceEmpacotamentoAbstractFactory.png)
+
+* Exemplo de classe concreta Empacotamento
+
+![](images/classeConcretaEmpacotamentoAbstractFactory.png)
+
+* Exemplo de interface Certificado 
+
+![](images/interfaceCertificadosAbstractFactory.png)
+
+* Exemplo de classe concreta Certificado
+
+![](images/classeConcretaCertificadosAbstractFactory.png)
+
+> Utilizaremos ainda um pouco do que foi aprendido anteriormente introduzindo as Factorys por iphone no modelo Simple Factory.
+> Teremos as factorys de iphone 11, iphoneX e a classe abstrata IphoneFactory que receberão por parâmetro a regra utilizada pelo país
+
+* Iphone factory
+
+![](images/iphoneFactoryAbstractFactory.png)
+
+* IphoneX Factory
+  
+![](images/iphoneXFactoryAbstractFactory.png)
+
+> Agora chegamos nas AbstractFactorys que englobam as regras de cada país
+
+* Interface Regras do País 
+
+![](images/countryRulesAbstractFactory.png)
+
+* Classe concreta de regras no Brasil
+  
+![](images/brazilianRulesAbstractFactory.png)
+
+> No cliente é necessário instanciar apenas a regra do país desejado e após isso
+> criar o iphone com a regra desejada. Dessa forma se surgissem novos países era apenas 
+> necessário criar suas regras de empacotamento, certificado e criar sua abstractFactory.
+
+* Cliente
+
+![](images/clienteAbstractFactory.png)
 
 -----
 # Padrões de Projetos Estruturais
