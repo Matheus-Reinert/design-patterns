@@ -93,7 +93,7 @@
 ![](images/clienteSimpleFactory.png)
 
 
-## Abstract Factory
+# Abstract Factory
 
 > É utilizada em uma família de objetos, onde existem interfaces diferentes mas que estão relacionadas dentro de uma 
 > funcionalidade do sistema.
@@ -185,7 +185,7 @@
 
 ![](images/clienteSingletonBefore.png)
 
-## Aplicação do Singleton
+### Aplicação do Singleton
 
 > Para ter um limite de conexões.
 > A classe terá um atributo privado e estático para criar o Objeto da classe
@@ -223,6 +223,62 @@
 * Cliente
 
 ![](images/clienteMonostate.png)
+
+# Builder
+
+> Separar a construção de um objeto complexo de sua representação para que o mesmo processo de construção
+> possa criar representações diferentes. Esse padrão serve para caso que temos muitos atributos e surge a necessidade de ter
+> vários construtores
+
+### Exemplo
+
+> Em nosso exemplo temos um fast food no qual tem vários itens e vendas em combos diferentes.
+> Dessa forma são necessários vários construtores.
+
+* FastFood
+
+![](images/fastFoodBuilderBefore.png)
+
+> No cliente para cada pedido diferente é solicitado outro construtor.
+
+* Cliente
+
+![](images/clienteBuilderBefore.png)
+
+### Aplicação Builder
+
+> Com o padrão builder teremos os cardápios pré-definidos pelas classes.
+
+* Estrutura builder
+
+![](images/estruturaBuilder.png)
+
+> Teremos então a classe principal Builder abstrata 
+
+* Fast Food Builder
+
+![](images/fastFoodMealBuilder.png)
+
+> Dessa forma todos as classes que estendem FastFoodMealBuilder deveram implementar seus
+> métodos e aplicando a opção do cardápio escolhido
+
+* Exemplo de cardápio
+
+![](images/justFriesBuilder.png)
+
+> Para gerenciar os construtores será criado uma classe Director responsável por
+> gerenciar o builder, que ao receber o builder já terá acesso aos métodos para criarem o combo escolhido.
+
+* Director
+
+![](images/mealDirectorBuilder.png)
+
+> No cliente será passado o builder para o director e a classe erá responsável por devolver
+> o combo correto.
+
+* Cliente
+
+![](images/clienteDirectorBuilder.png)
 
 -----
 # Padrões de Projetos Estruturais
