@@ -280,6 +280,34 @@
 
 ![](images/clienteDirectorBuilder.png)
 
+# Prototype
+
+> Especificar os tipos de objetos a serem criados usando uma instância como protótipo e 
+> criar novos objetos ao copiar este protótipo.
+
+### Exemplo
+
+> Para utilizar o protoype será mostrado um personagem que se move pela tela.
+> Será usado a classe pessoas que possui os atributos de linhas do personagem,
+> seus movimentos e o clone.
+
+* Personagem 
+
+![](images/personPrototype.png)
+
+> Na classe de amostra de personagens temos os personagens pré-definidos.
+
+* Tipos de personagem
+
+![](images/personSamplePrototype.png)
+
+> No cliente a parte principal está nas movimentações pois para cada movimentação um
+> objeto novo é criado e adicionado no frame da animação.
+
+* Cliente
+
+![](images/clientePrototype.png)
+
 -----
 # Padrões de Projetos Estruturais
 > Objetos podem se unir em estruturas maiores. Porém de forma organizada, facilitando possíveis extensões
