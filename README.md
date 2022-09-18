@@ -672,6 +672,40 @@
 
 ![](images/clienteClassMediator.png)
 
+## Proxy
+
+> Prover um substituto ou ponto através do qual um objeto possa controlar o acesso a outro.
+
+### Exemplo
+
+> Teremos um exemplo de banco onde o Cliente poder ter acesso ao banco e também ao caixa eletrônico
+> alguns comportamentos serão diferentes desses dois objetos, porém funcionam da mesma forma. O caixa eletrônico
+> será o proxy nesse caso.
+
+* User
+
+![](images/userClassProxy.png)
+
+> BankOperations é a interface que será implementada tanto por ATM quanto para Bank.
+
+* BankOperations
+
+![](images/bankOperationsInterfaceProxy.png)
+
+* Bank
+
+![](images/bankClassProxy.png)
+
+> No caixa eletrónico ATM, ao invés de ter seus próprios métodos criados, ele terá uma composição com bank
+> e dessa forma é possível delegar algumas responsabilidades diretas para bank.
+
+* ATM
+
+![](images/atmClassProxy.png)
+
+* Client
+
+![](images/clienteClassProxy.png)
 
 # Padrões de Projetos Comportamentais
-> Organizar a forma de comunicação entre os objetos
+> Organizar a forma de comunicação entre os objetos.
