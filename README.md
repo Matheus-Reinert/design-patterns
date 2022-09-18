@@ -421,5 +421,46 @@
 
 ![](images/clienteConverterClassBridge.png)
 
+## Composite
+
+> Compor o objeto em estrutura de árvore para representar hierarquia todo-parte. 
+> Composite permite que clientes tratem objetos individuais e composições de 
+> objeto de maneira uniforme.
+
+### Exemplo
+
+> O Exemplo utilizado é de um pequeno sistema de pastas e  arquivos onde uma pasta pode ter 
+> mais pastas filhas e arquivos filhos de forma que tornará uma árvore de hierarquia.
+>
+> Para tal exemplo será utilizado a interface de FileSystemItem que possui o método para
+> printar a estrutura.
+
+* FileSystemItem
+
+![](images/fileSystemItemComposite.png)
+
+> A classe Folder implementa a classe FileSystemItem e possui uma lista de filhos
+> que pode ser tanto pastas como arquivos. Trabalhando com a mesma interface tanto para
+> File quanto para Folder seria como termos Nós que são a pasta e folhas sendo pastas ou arquivos.
+> Não precisando se preocupar com qual filho estamos empregando para o Pai.
+
+* Folder
+
+![](images/folderComposite.png)
+
+> Pelo File ser mais simples e ser a folha na estrutura final, receberá apenas nome e 
+> implementará a interface FileSystemItem.
+
+* File
+
+![](images/folderComposite.png)
+
+> No cliente fica mais claro essa recursividade pois é possível ter um nó com vários filhos 
+> nós e no final posssuir uma folha.
+
+* Cliente
+
+![](images/clienteComposite.png)
+
 # Padrões de Projetos Comportamentais
 > Organizar a forma de comunicação entre os objetos
