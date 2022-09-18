@@ -224,7 +224,7 @@
 
 ![](images/clienteMonostate.png)
 
-# Builder
+## Builder
 
 > Separar a construção de um objeto complexo de sua representação para que o mesmo processo de construção
 > possa criar representações diferentes. Esse padrão serve para caso que temos muitos atributos e surge a necessidade de ter
@@ -280,7 +280,7 @@
 
 ![](images/clienteDirectorBuilder.png)
 
-# Prototype
+## Prototype
 
 > Especificar os tipos de objetos a serem criados usando uma instância como protótipo e 
 > criar novos objetos ao copiar este protótipo.
@@ -311,6 +311,73 @@
 -----
 # Padrões de Projetos Estruturais
 > Objetos podem se unir em estruturas maiores. Porém de forma organizada, facilitando possíveis extensões
+
+## Adapter
+
+> Converter a interface de uma classe em outra interface esperada pelos clientes.
+> Adapter permite a comunicação entre classes que não poderiam trabalhar juntas
+> devido à incompatibilidade de suas interfaces.
+> 
+> Para exemplificar o adapter de maneira lúdica será utilizado as classes devices na qual
+> Tv implementa a classe de HDMI e OldMonitor implementa a classe Vga. No caso de computer
+> existe a composição de HDMI.
+>
+> O HDMI consegue transmitir imagem e aúdio e
+> VGA só transmite imagem. 
+
+* HDMI
+
+![](images/adapterHdmi.png)
+
+* VGA
+
+![](images/adapterVga.png)
+
+> A classe OldMonitor implementa a classe de Vga já a classe de TV Implementa HDMI
+
+* TV
+
+![](images/adapterTV.png)
+
+* OldMonitor
+  
+![](images/adapterOldMonitor.png)
+
+> No caso de Computer existe a composição com a interface HDMI
+
+* Computer
+
+![](images/adapterComputer.png)
+
+> Agora chegamos no adapter, a primeira opção será o adapter de objeto
+
+### Adapter com objeto
+
+> HDMIToVGAAdapter trabalha tanto com herança quanto com composição
+> Implementando a classe HDMI e tendo a composição com VGA.
+> Dessa forma Herdara os métodos de HDMI e poderá utilizá-los para o VGA.
+
+> No cliente poderá ser utilizado o "Adaptador" para conectar a porta
+
+* Cliente
+
+![](images/clienteObjectAdapter.png)
+
+### Class Adapter 
+
+> No Adaptador de classe HDMIToOldMonitorAdapter é herdado de OldMonitor
+> e implementado HDMI. Possuindo o método setImage herdado de OldMonitor e
+> o método setSound herdado de HDMI.
+> 
+> No Cliente o objeto resultante de HDMIToOldMonitorAdapter pode
+> ser passado como parâmetro para conectar a porta.
+
+![](images/clienteClassAdapter.png)
+
+
+
+
+
 
 # Padrões de Projetos Comportamentais
 > Organizar a forma de comunicação entre os objetos

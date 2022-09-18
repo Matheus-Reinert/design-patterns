@@ -13,9 +13,9 @@ public class Client {
 		TV tv = new TV();
 		pc.connectPort(tv);
 		pc.sendImageAndSound("Cat and rainbow", "Nyan cat song");
-		
-		System.out.println("------ Monitor ----------");
-		
+
+		System.out.println("------ Monitor Object Adapter----------");
+
 		Computer pc2 = new Computer();
 		OldMonitor monitor = new OldMonitor();
 		//pc2.connectPort(monitor.getConnector());  //Don't work! That's the reason why we create the adapter
