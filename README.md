@@ -374,10 +374,52 @@
 
 ![](images/clienteClassAdapter.png)
 
+## Bridge
 
+> Desacoplar uma abstração de sua implementação para que os dois possam variar independentemente.
 
+### Exemplo
 
+> No exemplo temos uma classe de empregados e a necessidade de exportá-los, seja para csv, json,
+> ou qualquer outro tipo. Possuímos dois lados da ponte que devem ser interligados o tipo do empregado
+> e sua forma de exportação. 
+> 
+> Se for separar esses itens por classe seria algo parecido com : 
+> ITGuyToCSV, ProjectManagerToCSV, ITGuyToJson, ProjectManagerToJson. Dependendo da quantidade de classes
+> de empregados e de tipos de formato a quantidade de classes para converter seriam grandes.
 
+> A interface Employee e suas classes extendidas não possuem nada demais.
+
+* Employee
+
+![](images/employeeInterfaceBridge.png)
+
+* ITGuy
+
+![](images/itGuyClassBridge.png)
+
+* ProjectManager
+
+![](images/projectManagerClassBridge.png)
+
+> O Segredo está na interface que será implementada pelos conversores,
+> pois nela é passado por parâmetro o objeto Employee que deve ser convertido.
+
+* Converter
+
+![](images/converterInterfaceBridge.png)
+
+* Csv converter
+
+![](images/csvConverterClassBridge.png)
+
+* Json converter
+
+![](images/jsonConverterClassBridge.png)
+
+* Cliente 
+
+![](images/clienteConverterClassBridge.png)
 
 # Padrões de Projetos Comportamentais
 > Organizar a forma de comunicação entre os objetos
