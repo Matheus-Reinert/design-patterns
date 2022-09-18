@@ -709,3 +709,44 @@
 
 # Padrões de Projetos Comportamentais
 > Organizar a forma de comunicação entre os objetos.
+
+## Chain of responsability
+
+> Evita acoplar o remetente de uma requisição ao seu destinatário ao dar mais de um objeto 
+> a chance de servir requisição. Compõe os objetos em cascata e passa a requisição pela corrente
+> até que um objeto a sirva.
+
+### Exemplo
+
+> Será utilizado o exemplo de um dispenser onde é passado um valor e ele deve devolver esse dinheiro de
+> acordo com as notas que possuem na cadeia.
+
+### Exemplo sem Chain of responsability
+
+* Dispenser
+
+![](images/dispenserClassChainBefore.png)
+
+* Client
+
+![](images/clienteClassChainBefore.png)
+
+### Exemplo com Chain of responsability
+
+> No dispenser é adicionando uma chain onde ela recebe o valor e qual seu próximo item. 
+> Dessa forma é criada a cadeia de responsabilidade.
+
+* Dispenser
+
+![](images/dispenserClassChainAfter.png)
+
+* Bill
+
+![](images/billClassChainAfter.png)
+
+> No cliente é possível tanto utilizar a cadeia já criada ou gerar uma cadeia customizada com o
+> outro construtor.
+
+* Cliente
+
+![](images/clienteClassChainAfter.png)
