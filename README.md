@@ -564,5 +564,62 @@
 
 ![](images/clienteFacadeAfter.png)
 
+## FlyWeight
+
+> Usar compartilhamento para suportar grandes quantidades de objetos refinados eficientemente.
+
+> Então no objeto temos valores  intrínsecos e extrínsecos, os intrínsecos são valores que não modificam
+> e extrínsecos são valores diferentes para cada objeto.
+
+> É uma padrão voltado para "cache" de forma a consumir a memória de forma melhor. 
+
+### Exemplo antes
+
+> Teremos um musicPlayer onde name, artist e durationInSecond são intrínsecos, ou seja, não iram variar.
+
+* Music
+
+![](images/musicFlyWeightBefore.png)
+
+> Dessa forma ao tocar 2 músicas iguais para 2 pessoas diferentes tenho 4 músicas na memória.
+
+* Cliente
+
+![](images/clienteFlyWeightBefore.png)
+
+
+### Exemplo depois
+
+> Agora a música recebe uma composição de flyweight pois os valores intrínsecos serão compartilhados com
+> todos usuários.
+
+* Music
+
+![](images/musicFlyWeightAfter.png)
+
+* MusicFlyweight
+
+![](images/musicFlyWeightFlyWeightAfter.png)
+
+> Foi criado uma Factory para controlar as instâncias das músicas utilizando singleton. Toda música gerada 
+> passa pelo que getMusic, se ela não tem uma instância criada, será criada uma nova.
+
+* MusicFlyweightFactory
+
+![](images/MusicFlyWeightFactoryFlyWeightAfter.png)
+
+> No service ao tentar pegar a música da playlist do usuário, se ela não existir será passado a instância
+> de FlyWeightFactory, ou seja os dados que são repetidos serão usados para todos usuários.
+
+* MusicService
+
+![](images/MusicServiceFlyWeightAfter.png)
+
+> No cliente a quantidade de músicas na memória é reduzida.
+
+* Cliente
+
+![](images/clienteFlyWeightAfter.png)
+
 # Padrões de Projetos Comportamentais
 > Organizar a forma de comunicação entre os objetos
