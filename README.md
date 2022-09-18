@@ -621,5 +621,57 @@
 
 ![](images/clienteFlyWeightAfter.png)
 
+## Mediator
+
+> Definir um objeto que encapsula como um conjunto de objetos interagem. Mediator promove acoplamento fraco
+> ao manter objetos que não se referem um ao outro explicitamente, permitindo variar suas interações de forma
+> independente;
+
+### Exemplo
+
+> O mediator serve para comunicação de objetos de uma ponta com outra.
+>
+> No exemplo de chat e tradução onde usuários de um país fazem comunicação com outro temos 
+> a classe abstrata de User, PortugueseUser e EnglishUser que extendem de User e Enum Language.
+
+* User
+
+![](images/abstactClassUserMediator.png)
+
+* EnglishUser
+
+![](images/englishUserClassUserMediator.png)
+
+
+* PortugueseUser
+
+![](images/portugueseUserClassMediator.png)
+
+* Language
+
+![](images/enumLanguageMediator.png)
+
+> No Mediator que é feito a comunicação entre os usuários, é uma classe abstrata que será extendida
+> por ChatMediator e TranslatorMediator. 
+
+* Mediator
+
+![](images/mediatorAbstractClassMediator.png)
+
+* ChatMediator
+
+![](images/chatMediatorClassMediator.png)
+
+* TranslatorMediator
+
+![](images/translatorMediatorClassMediator.png)
+
+> Dependendo da instância utilizada o mediator irá traduzir ou não a mensagem no Cliente.
+
+* Cliente
+
+![](images/clienteClassMediator.png)
+
+
 # Padrões de Projetos Comportamentais
 > Organizar a forma de comunicação entre os objetos
