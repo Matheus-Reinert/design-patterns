@@ -462,5 +462,58 @@
 
 ![](images/clienteComposite.png)
 
+## Decorator
+
+> Anexar responsabilidades adicionais a um objeto dinamicamente. Decorators oferecem uma alternativa flexível 
+> ao uso de herança para estender uma funcionalidade.
+> 
+> Podemos herdar apenas de uma classe ou implementar mais de uma classe mas com o decorator
+> é possível acrescentar novas funcionalidades a um objeto de forma dinâmica via composição.
+
+### Exemplo
+
+> Teremos uma cafeteria que vende café expresso, e chá. Porém também é possível pedir esses drinks
+> com leite ou doubleDrink. Para não criar classes ExpressoMilk, ExpressoDoubleDrink, TeaMilk, TeaDoubleDrink. 
+> Pode-se utilizar o decorator podendo criar objeto com as classes concretas de drinks com os decorators.
+
+> Na interface Drink possui os métodos serve() e getPrice() que são implementados por Expresso e Tea.
+
+* Drink
+
+![](images/interfaceDrinkDecorator.png)
+
+* Expresso
+
+![](images/classeExpressoDecorator.png)
+
+* Tea
+
+![](images/classeTeaDecorator.png)
+
+> A classe abstrata DrinkDecorator implementa Drink, por ser uma classe abstrata não implementa os métodos de Drink.
+> Para criar a composição temos o atributo Drink que será utilizado para adicionar novas funcionalidades respeitando a
+> mesma interface.
+
+* Drink Decorator
+
+![](images/abstractClassDrinkDecoratorDecorator.png)
+
+> Tanto DoubleDrink quanto Milk extendem DrinkDecorator e receberam o Drink em seu construtor.À partir disso
+> o Objeto passado receberá seu novo preço e quantidade.
+
+* Milk
+
+![](images/milkDecorator.png)
+
+* Double Drink
+
+![](images/doubleDrinkDecorator.png)
+
+> No cliente é passado apenas o objeto de Drink para seu decorator caso seja uma bebida "especial".
+
+* Cliente
+
+![](images/clienteDecorator.png)
+
 # Padrões de Projetos Comportamentais
 > Organizar a forma de comunicação entre os objetos
