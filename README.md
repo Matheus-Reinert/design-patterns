@@ -498,7 +498,7 @@
 
 ![](images/abstractClassDrinkDecoratorDecorator.png)
 
-> Tanto DoubleDrink quanto Milk extendem DrinkDecorator e receberam o Drink em seu construtor.À partir disso
+> Tanto DoubleDrink quanto Milk extendem DrinkDecorator e receberão o Drink em seu construtor.À partir disso
 > o Objeto passado receberá seu novo preço e quantidade.
 
 * Milk
@@ -514,6 +514,55 @@
 * Cliente
 
 ![](images/clienteDecorator.png)
+
+## Facade
+
+> Oferece uma interface única para um conjunto de interfaces de um subsistema. Façade define uma 
+> interface de nível mais elevado que torna o subsistema mais fácil de usar.
+
+### Exemplo antes
+
+> Em um sistema de cartão de crédito o cliente tendo acesso a todas classes para manipulação dificulta alterações,
+> pois todos os clientes que usam o sistema utilizaram todos serviços. Temos então um alto acoplamento e
+> dificuldade para evoluir o código.
+
+> Antes de aplicar o facade temos as classes de Cartão e Registro.
+
+
+* Card
+
+![](images/cardFacadeBefore.png)
+
+* Register
+
+![](images/registerFacadeBefore.png)
+
+> E suas classes de serviço.
+
+* Services
+
+![](images/servicesFacadeBefore.png)
+
+> Mas a parte importante desse código é mostrar que o cliente tem acesso a todos os serviços sem
+> ter uma fachada.Isso gera uma complexidade muito  maior.
+
+* Cliente
+
+![](images/clienteFacadeBefore.png)
+
+### Exemplo depois
+
+> Agora com o facade implementado o Cliente acessa todos serviços à partir da Fachada, se for necessário
+> qualquer alteração no modelo de negócio pode ser manipulado direto na fachada correndo menos riscos de impactar
+> no cliente.
+
+* CallCenterFacade
+
+![](images/callCenterFacadeFacadeAfter.png)
+
+* Cliente
+
+![](images/clienteFacadeAfter.png)
 
 # Padrões de Projetos Comportamentais
 > Organizar a forma de comunicação entre os objetos
