@@ -750,3 +750,35 @@
 * Cliente
 
 ![](images/clienteClassChainAfter.png)
+
+## Memento
+
+> Sem violar o encapsulamento, capturar e externalizar o estado interno de um objeto para que o objeto possa ter
+> esse estado restaurado posteriormente.
+
+### Exemplo
+
+> Salvar estados de um text area.
+> A classe TextAreaWithMemory estende JText mas apenas para usar a interface e temos
+> dois métodos relacionados ao memento. Foi criado o TextAreaMemento para que dentro 
+> dele seja encapsulado o texto.
+> 
+> A interface Memento é vazia. Está sendo utilizado no Caretaker que basicamente salva os estados
+> e devolve de acordo com o index.
+
+* TextAreaWithMemory
+
+![](images/textAreaWithMemoryClassMemento.png)
+
+* Memento
+
+![](images/mementoInterfaceMemento.png)
+
+* Carataker
+
+![](images/caratakerClassMemento.png)
+
+* Client
+
+![](images/clienteClassMementopt1.png)
+![](images/clienteClassMementopt2.png)
